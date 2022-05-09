@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+void swap(int *a,int *b)
+{
+        int tmp = *a;
+        *a = *b;
+        *b = tmp;
+}
+void printArr(int arr[],int n)
+        {
+                int i = 0;
+                for(i=0;i<n;i++)
+                        printf("%d  ",arr[i]);
+                        printf("\n");
+        }
+void insertSort(int a[],int len)
+{
+        int n = len;
+        int index =0;
+        int i;
+        for(i =0;i<n;i++)
+        {
+                int tp = a[i];
+                int j;
+                for(j =i;j>=0;j--)
+                {
+                        if(a[j]>tp)
+                        {
+                                a[j]=a[j-i];
+                                index =j;
+                        }
+                else
+                        break;
+                }
+        a[index]=tp;
+                printArr(a,n);
+        }
+}
+int main()
+{
+        int arr[8]={58,50,100,124,12,8,78,23};
+                printf("/n");
+                insertSort(arr,8);
+}
